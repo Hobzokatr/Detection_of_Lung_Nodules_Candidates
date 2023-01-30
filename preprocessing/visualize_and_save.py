@@ -12,6 +12,6 @@ import random
 import numpy as np
 from load_tools import load_itk, show_images, world_2_voxel
 import SimpleITK as sitk
-from functions import visualize_data
+from utils import visualize_data
 
 visualize_data()
