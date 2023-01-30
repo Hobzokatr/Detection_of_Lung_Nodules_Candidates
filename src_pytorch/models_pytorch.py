@@ -2,9 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-"""The Laplacian of Gaussian"""
 
-class LoG_Blob_Detector(nn.Module):
+class Blob_Detector_a(nn.Module):
     def __init__(self, height, width, channels):
         super().__init__()
         self.conv1 = nn.Conv2d(in_channels=channels, out_channels=1, kernel_size=(3, 3), padding=1)
@@ -30,8 +29,9 @@ class LoG_Blob_Detector(nn.Module):
 
         return x
 
-"""Difference of Gaussians"""
-class DoG_Blob_Detector(nn.Module):
+
+
+class Blob_Detector_b(nn.Module):
     def __init__(self, height, width, channels):
         super().__init__()
         self.conv1 = nn.Conv2d(in_channels=channels, out_channels=1, kernel_size=3, stride=1)
@@ -59,8 +59,9 @@ class DoG_Blob_Detector(nn.Module):
 
         return x
 
-"""The determinant of the Hessian"""
-class DoH_blob_detector(nn.Module):
+
+
+class Blob_Detector_c(nn.Module):
     def __init__(self):
         super().__init__()
         self.conv1 = nn.Conv2d(in_channels=channels, out_channels=8, kernel_size=(5, 5), stride=1)
